@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         ZStack{
          
-            Color.pink
+            Color.green
                 .edgesIgnoringSafeArea(.all)
           
             Button(action:{
@@ -34,12 +34,13 @@ struct ContentView: View {
             if showHalfSheet{
                 VStack{
                 HalfSheet(showHalfSheet: $showHalfSheet)
-                    .cornerRadius(10)
+                    .shadow(color:.black,radius: 10)
+                    .cornerRadius(20)
                 
                 }.transition(.move(edge: .bottom))
                 .animation(.spring(response: 1, dampingFraction: 0.7, blendDuration: 1))
                 .offset(y: showHalfSheet ? 400 : 0)
-                
+                .shadow(radius: 10)
             }
         }
         
